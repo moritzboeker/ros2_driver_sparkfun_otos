@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>sparkfun_otos_driver</name>
+  <version>0.1.0</version>
+  <description>
+    ROS 2 driver for SparkFun's Optical Tracking Odometry Sensor (OTOS, PAA5160E1).
+    Publishes nav_msgs/Odometry and optionally broadcasts the odom transform.
+  </description>
+  <maintainer email="moritz.boeker@public-files.de">Moritz Emanuel Boeker</maintainer>
+  <license>MIT</license>
+  <url type="repository">https://github.com/moritzboeker/ros2_driver_sparkfun_otos</url>
+  <url type="bugtracker">https://github.com/moritzboeker/ros2_driver_sparkfun_otos/issues</url>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>tf2_ros_py</exec_depend>
+  <!-- The sensor library is not resolvable via rosdep; install it with:
+       pip install sparkfun-qwiic-otos -->
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

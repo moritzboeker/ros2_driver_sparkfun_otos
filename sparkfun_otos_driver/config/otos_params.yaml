@@ -1,0 +1,36 @@
+otos:
+  ros__parameters:
+    # Frame the odometry is expressed in / frame of the robot base.
+    frame_id: odom
+    child_frame_id: base_link
+
+    # Publishing frequency of odometry (and TF) in Hz.
+    publish_rate: 20.0
+
+    # Broadcast the frame_id -> child_frame_id transform. Set to false when
+    # another node (e.g. an EKF fusing several odometry sources) owns it.
+    publish_tf: true
+
+    # Per-robot calibration factors applied in the sensor firmware,
+    # valid range [0.872, 1.127]. See the README for the tuning procedure.
+    linear_scalar: 1.0
+    angular_scalar: 1.0
+
+    # Pose of the sensor relative to the robot center (meters, radians).
+    # The sensor compensates the offset in firmware, so the published
+    # odometry refers to the robot center regardless of mounting position.
+    offset:
+      x: 0.0
+      y: 0.0
+      yaw: 0.0
+
+    # Diagonal covariance values [x, y, yaw]. The OTOS' own std-dev registers
+    # are not used because SparkFun states they do not represent actual error.
+    # The pose variance grows with distance traveled:
+    #   var = pose_variance + (pose_drift_per_meter * distance)^2
+    # The drift default matches SparkFun's typical accuracy of 0.5 % of
+    # distance traveled; the ~/reset_tracking service resets the accumulation.
+    # Twist covariance is static. Tune these for your EKF.
+    pose_variance: [1.0e-3, 1.0e-3, 1.0e-3]
+    pose_drift_per_meter: [5.0e-3, 5.0e-3, 5.0e-3]
+    twist_variance: [1.0e-3, 1.0e-3, 1.0e-3]
