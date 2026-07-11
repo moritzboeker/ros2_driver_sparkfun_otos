@@ -1,6 +1,6 @@
-# ros2_driver_sparkfun_otos
+# ros2_sparkfun_otos_driver
 
-[![CI](https://github.com/moritzboeker/ros2_driver_sparkfun_otos/actions/workflows/ci.yml/badge.svg)](https://github.com/moritzboeker/ros2_driver_sparkfun_otos/actions/workflows/ci.yml)
+[![CI](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/ci.yml/badge.svg)](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ROS 2 driver for the [SparkFun Optical Tracking Odometry Sensor (OTOS)](https://www.sparkfun.com/products/24904),
@@ -30,7 +30,7 @@ pip install sparkfun-qwiic-otos
 
 # 2. Clone into your workspace and build
 cd ~/ros2_ws/src
-git clone https://github.com/moritzboeker/ros2_driver_sparkfun_otos.git
+git clone https://github.com/moritzboeker/ros2_sparkfun_otos_driver.git
 cd ~/ros2_ws
 rosdep install --from-paths src --ignore-src -y
 colcon build --packages-select sparkfun_otos_driver

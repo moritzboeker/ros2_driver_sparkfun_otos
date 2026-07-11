@@ -9,8 +9,8 @@
   </description>
   <maintainer email="moritz.boeker@public-files.de">Moritz Emanuel Boeker</maintainer>
   <license>MIT</license>
-  <url type="repository">https://github.com/moritzboeker/ros2_driver_sparkfun_otos</url>
-  <url type="bugtracker">https://github.com/moritzboeker/ros2_driver_sparkfun_otos/issues</url>
+  <url type="repository">https://github.com/moritzboeker/ros2_sparkfun_otos_driver</url>
+  <url type="bugtracker">https://github.com/moritzboeker/ros2_sparkfun_otos_driver/issues</url>
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>nav_msgs</exec_depend>
