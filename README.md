@@ -1,5 +1,3 @@
-This package uses SparkFun libraries licensed under the MIT License.
-
 # ros2_driver_sparkfun_otos
 
 [![CI](https://github.com/moritzboeker/ros2_driver_sparkfun_otos/actions/workflows/ci.yml/badge.svg)](https://github.com/moritzboeker/ros2_driver_sparkfun_otos/actions/workflows/ci.yml)
