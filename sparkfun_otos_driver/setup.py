@@ -27,7 +27,9 @@ setup(
                 '(OTOS, PAA5160E1). Publishes nav_msgs/Odometry and optionally '
                 'broadcasts the odom transform.',
     license='MIT',
-    tests_require=['pytest'],
+    extras_require={
+        'test': ['pytest'],
+    },
     entry_points={
         'console_scripts': [
             'otos_node = sparkfun_otos_driver.otos_node:main',

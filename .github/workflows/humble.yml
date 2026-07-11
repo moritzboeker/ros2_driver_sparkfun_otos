@@ -1,0 +1,13 @@
+name: Humble
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  humble:
+    uses: ./.github/workflows/build.yml
+    with:
+      distro: humble

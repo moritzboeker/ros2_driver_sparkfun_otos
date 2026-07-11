@@ -1,6 +1,8 @@
 # ros2_sparkfun_otos_driver
 
-[![CI](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/ci.yml/badge.svg)](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/ci.yml)
+[![Humble](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/humble.yml/badge.svg?branch=main)](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/humble.yml)
+[![Jazzy](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/jazzy.yml/badge.svg?branch=main)](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/jazzy.yml)
+[![Rolling](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/rolling.yml/badge.svg?branch=main)](https://github.com/moritzboeker/ros2_sparkfun_otos_driver/actions/workflows/rolling.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ROS 2 driver for the [SparkFun Optical Tracking Odometry Sensor (OTOS)](https://www.sparkfun.com/products/24904),

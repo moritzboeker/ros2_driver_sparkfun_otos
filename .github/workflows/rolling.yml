@@ -1,0 +1,13 @@
+name: Rolling
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rolling:
+    uses: ./.github/workflows/build.yml
+    with:
+      distro: rolling

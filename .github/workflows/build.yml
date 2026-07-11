@@ -1,0 +1,43 @@
+name: Build and test
+
+on:
+  workflow_call:
+    inputs:
+      distro:
+        description: ROS 2 distribution to build and test against
+        required: true
+        type: string
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    container: ros:${{ inputs.distro }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: src/ros2_driver_sparkfun_otos
+
+      - name: Install sensor library and pytest
+        run: |
+          apt-get update
+          apt-get install -y python3-pip python3-pytest
+          pip install --break-system-packages sparkfun-qwiic-otos || pip install sparkfun-qwiic-otos
+
+      - name: Install dependencies
+        run: |
+          rosdep update --rosdistro ${{ inputs.distro }}
+          rosdep install --from-paths src --ignore-src -y --rosdistro ${{ inputs.distro }}
+
+      - name: Build
+        shell: bash
+        run: |
+          source /opt/ros/${{ inputs.distro }}/setup.bash
+          colcon build --packages-select sparkfun_otos_driver
+
+      - name: Test
+        shell: bash
+        run: |
+          source /opt/ros/${{ inputs.distro }}/setup.bash
+          source install/setup.bash
+          colcon test --packages-select sparkfun_otos_driver --event-handlers console_direct+
+          colcon test-result --verbose
